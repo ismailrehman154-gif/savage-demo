@@ -10,7 +10,7 @@ const url = "mongodb+srv://demo:demo@cluster0-q2ojb.mongodb.net/test?retryWrites
 const dbName = "demo"; //  giving the database a name
 
 // down here is where we set up the server, and which port the database and files will render on, we connect it to the db and set it up
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
     if (error) {
       throw error;
